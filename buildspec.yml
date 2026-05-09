@@ -32,6 +32,6 @@ phases:
           aws lambda wait function-updated --function-name $LAMBDA_FUNCTION --region $AWS_REGION
           aws lambda update-function-configuration --function-name $LAMBDA_FUNCTION --timeout 900 --memory-size 3008 --region $AWS_REGION
         else
-          aws lambda create-function --function-name $LAMBDA_FUNCTION --package-type Image --code ImageUri=$ECR_URI --role $LAMBDA_ROLE_ARN --timeout 900 --memory-size 5008 --region $AWS_REGION
+          aws lambda create-function --function-name $LAMBDA_FUNCTION --package-type Image --code ImageUri=$ECR_URI --role $LAMBDA_ROLE_ARN --timeout 900 --memory-size 3008 --region $AWS_REGION
           aws lambda wait function-active --function-name $LAMBDA_FUNCTION --region $AWS_REGION
         fi
